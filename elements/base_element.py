@@ -19,7 +19,6 @@ class BaseElement:
         locator = self.get_locator(**kwargs)
         expect(locator).to_be_visible()
 
-    def check_have_text(self, text: str, **kwargs):
+    def check_have_text(self, text: str, **kwargs: object) -> object:
         locator = self.get_locator(**kwargs)
         expect(locator).to_have_text(text)
-        
