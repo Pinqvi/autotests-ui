@@ -1,4 +1,6 @@
 from config import settings
+import platform
+import sys
 
 
 def create_allure_environment_file():
@@ -7,3 +9,8 @@ def create_allure_environment_file():
 
     with open(settings.allure_results_dir.joinpath('environment.properties'), 'w+') as file:
         file.write(properties)
+    with open(settings.allure_results_dir.joinpath('environment.properties'), "a") as file:
+        file.write(
+            f'\nos_info={platform.system()}, {platform.release()}'
+            f'\npython_version={sys.version}'
+        )
