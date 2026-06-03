@@ -12,6 +12,7 @@ from tools.routes import AppRoute
 from config import settings
 
 
+@pytest.mark.xdist_group(name="authorization-group")
 @pytest.mark.regression
 @pytest.mark.authorization
 @allure.tag(AllureTag.REGRESSION, AllureTag.AUTHORIZATION)
@@ -62,6 +63,7 @@ class TestAuthorization:
 
         registration_page.registration_form.check_visible(email="", username="", password="")
 
+    @pytest.mark.xdist_group(name="authorization-group")
     @pytest.mark.parametrize(
         "email, password",
         [
