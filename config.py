@@ -45,7 +45,7 @@ class Settings(BaseSettings):
         tracing_dir = DirectoryPath("./tracing")
         browser_state_file = FilePath("browser-state.json")
         allure_results_dir = DirectoryPath("./allure-results")
-        allure_history_dir = DirectoryPath("/allure-history")
+        allure_history_dir = DirectoryPath("./allure-history")
 
         videos_dir.mkdir(exist_ok=True)
         tracing_dir.mkdir(exist_ok=True)
