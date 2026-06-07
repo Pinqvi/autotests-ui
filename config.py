@@ -36,7 +36,6 @@ class Settings(BaseSettings):
     videos_dir: DirectoryPath
     tracing_dir: DirectoryPath
     allure_results_dir: DirectoryPath
-    # allure_history_dir: DirectoryPath
     browser_state_file: FilePath
 
     @classmethod
@@ -45,19 +44,16 @@ class Settings(BaseSettings):
         tracing_dir = DirectoryPath("./tracing")
         browser_state_file = FilePath("browser-state.json")
         allure_results_dir = DirectoryPath("./allure-results")
-        # allure_history_dir = DirectoryPath("./allure-history")
 
         videos_dir.mkdir(exist_ok=True)
         tracing_dir.mkdir(exist_ok=True)
         allure_results_dir.mkdir(exist_ok=True)
-        # allure_history_dir.mkdir(exist_ok=True)
         browser_state_file.touch(exist_ok=True)
 
         return Settings(
             videos_dir=videos_dir,
             tracing_dir=tracing_dir,
             allure_results_dir=allure_results_dir,
-            # allure_history_dir=allure_history_dir,
             browser_state_file=browser_state_file
         )
 
